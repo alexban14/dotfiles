@@ -16,7 +16,6 @@ lsp.ensure_installed({
 	'marksman',
 	'intelephense',
 	'phpactor',
-	'pylyzer',
 	'pyright',
 	'sqlls',
 	'tailwindcss',
