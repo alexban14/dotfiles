@@ -3,6 +3,7 @@
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
 rm -rf $HOME/.config/kitty
+rm -rf $HOME/.config/kitty.conf/kitty
 ln -s $DOTFILES/kitty $HOME/.config/kitty.conf
 
 rm -rf $HOME/.tmux.conf
