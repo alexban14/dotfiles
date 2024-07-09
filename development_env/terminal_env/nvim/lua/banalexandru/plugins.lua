@@ -39,7 +39,16 @@ use({ 'rose-pine/neovim', as = 'rose-pine' })
 vim.cmd('colorscheme rose-pine')
 
 use('ThePrimeagen/harpoon')
-use('mbbill/undotree')
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+
+vim.keymap.set("n", "<leader>a", mark.add_file)
+vim.keymap.set("n", "<leader><C-e>", ui.toggle_quick_menu)
+
+vim.keymap.set("n", "<C-h>", function() ui.nav_file(1) end)
+vim.keymap.set("n", "<C-t>", function() ui.nav_file(2) end)
+vim.keymap.set("n", "<C-n>", function() ui.nav_file(3) end)
+vim.keymap.set("n", "<C-s>", function() ui.nav_file(4) end)
 
 -- Git commands.
 use({
@@ -135,14 +144,6 @@ use({
   end,
 })
 
--- All closing buffers without closing the split window.
-use({
-  'famiu/bufdelete.nvim',
-  config = function()
-    vim.keymap.set('n', '<Leader>q', ':Bdelete<CR>')
-  end,
-})
-
 -- Split arrays and methods onto multiple lines, or join them back up.
 use({
   'AndrewRadev/splitjoin.vim',
@@ -197,6 +198,15 @@ use({
     -- require('bufferline').setup()
   end,
 })
+
+-- All closing buffers without closing the split window.
+use({
+  'famiu/bufdelete.nvim',
+  config = function()
+    vim.keymap.set('n', '<Leader>q', ':Bdelete<CR>')
+  end,
+})
+
 
 -- Display indentation lines.
 use("lukas-reineke/indent-blankline.nvim")
@@ -271,6 +281,23 @@ use({
   config = function()
     vim.keymap.set('n', '<Leader>pm', ':PhpactorContextMenu<CR>')
     vim.keymap.set('n', '<Leader>pn', ':PhpactorClassNew<CR>')
+  end,
+})
+
+-- Project Configuration.
+use({
+  'tpope/vim-projectionist',
+  requires = 'tpope/vim-dispatch',
+  config = function()
+    require('banalexandru/plugins/projectionist')
+  end,
+})
+
+-- Testing helper
+use({
+  'vim-test/vim-test',
+  config = function()
+    require('banalexandru/plugins/vim-test')
   end,
 })
 
