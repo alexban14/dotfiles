@@ -193,8 +193,8 @@ use({
   'akinsho/bufferline.nvim',
   requires = 'kyazdani42/nvim-web-devicons',
   config = function()
-    -- require('banalexandru/plugins/bufferline')
-    require('bufferline').setup()
+    require('banalexandru/plugins/bufferline')
+    -- require('bufferline').setup()
   end,
 })
 
@@ -263,6 +263,16 @@ use({
   end,
 })
 
+-- PHP Refactoring Tools
+use({
+  'phpactor/phpactor',
+  ft = 'php',
+  run = 'composer install --no-dev --optimize-autoloader',
+  config = function()
+    vim.keymap.set('n', '<Leader>pm', ':PhpactorContextMenu<CR>')
+    vim.keymap.set('n', '<Leader>pn', ':PhpactorClassNew<CR>')
+  end,
+})
 
 -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins
