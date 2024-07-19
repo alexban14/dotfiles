@@ -210,7 +210,7 @@ use({
 
 -- Display indentation lines.
 use("lukas-reineke/indent-blankline.nvim")
-require("banalexandru/plugins/indent-blankline")
+-- require("banalexandru/plugins/indent-blankline").setup()
 
 -- Git integration.
 use({
@@ -233,7 +233,6 @@ use({
     require('nvim-treesitter.install').update({ with_sync = true })
   end,
   requires = {
-    'JoosepAlviste/nvim-ts-context-commentstring',
     'nvim-treesitter/nvim-treesitter-textobjects',
   },
   config = function()

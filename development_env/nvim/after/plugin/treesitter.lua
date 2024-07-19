@@ -1,4 +1,4 @@
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup({
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
   ensure_installed = { "javascript", "typescript", "php", "c", "lua", "vim", "vimdoc", "query" },
 
@@ -19,8 +19,16 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
+  textobjects = {
+    select = {
+      enable = true,
+      lookahead = true,
+      keymaps = {
+        ['if'] = '@function.inner',
+        ['af'] = '@function.outer',
+        ['ia'] = '@parameter.inner',
+        ['aa'] = '@parameter.outer',
+      },
+    }
   }
-}
+})
