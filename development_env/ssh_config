@@ -1,0 +1,29 @@
+Host github.com
+  IdentityFile ~/.ssh/keys/github.key
+  IdentitiesOnly yes
+
+Host webfusion-turkey-staging
+  HostName 10.2.101.95
+  User ec2-user
+  IdentityFile ~/.ssh/keys/webfusion-turkey-staging.key
+
+Host webfusion-asia-staging
+  HostName 10.0.101.104
+  User ec2-user
+  IdentityFile ~/.ssh/keys/webfusion-asia-staging.key
+
+Host deployteam-cluster-dev-master
+  HostName 172.26.40.2
+  User root
+  IdentityFile ~/.ssh/keys/deployteam-cluster-dev.pub
+  IdentitiesOnly yes
+
+Host deployteam-cluster-dev-agent
+  HostName 172.26.40.3
+  User root
+  IdentityFile ~/.ssh/keys/deployteam-cluster-dev.pub
+  IdentitiesOnly yes
+
+Host *
+  IdentityAgent ~/.1password/agent.sock
+  ForwardAgent yes
