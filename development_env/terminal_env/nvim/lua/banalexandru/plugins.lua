@@ -209,7 +209,8 @@ use({
 
 
 -- Display indentation lines.
-use("lukas-reineke/indent-blankline.nvim")
+use "lukas-reineke/indent-blankline.nvim"
+use "HiPhish/rainbow-delimiters.nvim"
 -- require("banalexandru/plugins/indent-blankline").setup()
 
 -- Git integration.
