@@ -1,5 +1,6 @@
 require('nvim-treesitter.configs').setup({
   ensure_installed = 'all',
+  ignore_install = { 'hoon' }, -- Skip the hoon parser
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = true,
