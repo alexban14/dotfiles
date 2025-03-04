@@ -1,0 +1,32 @@
+# OhMyZsh Theme
+#ohmyzsh/ohmyzsh   path:lib/theme-and-appearance.zsh
+#ohmyzsh/ohmyzsh   path:lib/prompt_info_functions.zsh
+#ohmyzsh/ohmyzsh   path:lib/git.zsh
+#ohmyzsh/ohmyzsh   path:lib/clipboard.zsh
+#ohmyzsh/ohmyzsh   path:themes/bira.zsh-theme
+
+# Spaceship Theme
+#spaceship-prompt/spaceship-prompt
+
+# OhMyZsh plugins
+ohmyzsh/ohmyzsh   path:plugins/asdf                      kind:defer
+ohmyzsh/ohmyzsh   path:plugins/nvm                       kind:defer
+ohmyzsh/ohmyzsh   path:plugins/npm                       kind:defer
+ohmyzsh/ohmyzsh   path:plugins/command-not-found         kind:defer
+ohmyzsh/ohmyzsh   path:plugins/minikube                  kind:defer
+ohmyzsh/ohmyzsh   path:plugins/kubectl                   kind:defer 
+ohmyzsh/ohmyzsh   path:plugins/helm                      kind:defer 
+ohmyzsh/ohmyzsh   path:plugins/docker                    kind:defer 
+ohmyzsh/ohmyzsh   path:plugins/docker-compose            kind:defer 
+
+# Utils
+belak/zsh-utils   path:completion                        kind:zsh
+belak/zsh-utils   path:history                           kind:zsh
+belak/zsh-utils   path:prompt                            kind:zsh
+belak/zsh-utils   path:utility                           kind:zsh
+
+# Other plugins
+zdharma-continuum/fast-syntax-highlighting               kind:zsh
+zsh-users/zsh-autosuggestions                            kind:defer
+zsh-users/zsh-completions                                kind:defer
+marlonrichert/zsh-autocomplete                           kind:zsh
