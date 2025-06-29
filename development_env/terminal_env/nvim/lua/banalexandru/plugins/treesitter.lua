@@ -1,5 +1,5 @@
 require('nvim-treesitter.configs').setup({
-  ensure_installed = 'all',
+  ensure_installed = { 'lua', 'vim', 'vimdoc', 'go', 'rust', 'c', 'cpp', 'javascript', 'typescript', 'html', 'css', 'json', 'yaml', 'markdown' },
   ignore_install = { 'hoon' }, -- Skip the hoon parser
   highlight = {
     enable = true,

@@ -28,25 +28,30 @@ require('lspconfig').jsonls.setup({
   },
 })
 
+local nonels_status, nonels = pcall(require, "none-ls")
+if not nonels_status then
+  return
+end
+
 -- null-ls
-require('null-ls').setup({
+nonels.setup({
   sources = {
-    require('null-ls').builtins.diagnostics.eslint_d.with({
+    nonels.builtins.diagnostics.eslint_d.with({
       condition = function(utils)
         return utils.root_has_file({ '.eslintrc.js' })
       end,
     }),
-    require('null-ls').builtins.diagnostics.trail_space.with({ disabled_filetypes = { 'NvimTree' } }),
-    require('null-ls').builtins.formatting.eslint_d.with({
+    nonels.builtins.diagnostics.trail_space.with({ disabled_filetypes = { 'NvimTree' } }),
+    nonels.builtins.formatting.eslint_d.with({
       condition = function(utils)
         return utils.root_has_file({ '.eslintrc.js' })
       end,
     }),
-    require('null-ls').builtins.formatting.prettierd,
+    nonels.builtins.formatting.prettierd,
   },
 })
 
-require('mason-null-ls').setup({ automatic_installation = true })
+
 
 -- Keymaps
 vim.keymap.set('n', '<Leader>d', '<cmd>lua vim.diagnostic.open_float()<CR>')
