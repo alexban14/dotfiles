@@ -10,12 +10,34 @@ Host plumledger-trunks-dev
   User aban
   IdentitiesOnly yes
 
+Host plumledger-piccolo
+  HostName 134.195.91.36
+  IdentityFile ~/.ssh/keys/piccolo
+  User aban
+  IdentitiesOnly yes
+
+Host production-datacenter-old
+  HostName 10.159.10.7
+  IdentityFile ~/.ssh/keys/dc-10.7
+  ProxyCommand duoconnect -host=%h:%p -relay=https://gdaves.altametrics.com
+  User aban
+
+Host dev-datacenter-old
+  HostName 10.159.10.8
+  IdentityFile ~/.ssh/keys/dc-10.7
+  ProxyCommand duoconnect -host=%h:%p -relay=https://gdaves.altametrics.com
+  User aban
+
 Host github.com
   IdentityFile ~/.ssh/keys/github.key
   IdentitiesOnly yes
 
 Host bitbucket.org
   IdentityFile ~/.ssh/keys/bitbucket-altametrics
+  IdentitiesOnly yes
+
+Host amgit.altametrics.com
+  IdentityFile ~/.ssh/keys/altametrics.gitlab
   IdentitiesOnly yes
 
 Host meilisearch-turkey
@@ -55,6 +77,12 @@ Host ddd-swrm-cluster
   HostName 100.72.209.67
   User mgr1
   IdentityFile ~/.ssh/keys/proxmox-k8s-cluster/mgr1
+  IdentitiesOnly yes
+
+Host ag-ec2-instance
+  HostName ec2-23-20-105-218.compute-1.amazonaws.com
+  User ubuntu
+  IdentityFile ~/.ssh/ag-access-keypair.pem
   IdentitiesOnly yes
 
 Host *

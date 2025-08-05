@@ -5,8 +5,8 @@ DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 rm -rf $HOME/.config/kitty
 ln -s $DOTFILES/kitty $HOME/.config/kitty
 
-rm -rf $HOME/.tmux
-ln -s $DOTFILES/tmux $HOME/.tmux
+rm -rf $HOME/.config/tmux
+ln -s $DOTFILES/tmux $HOME/.config/tmux
 
 rm -rf $HOME/.config/nvim
 ln -s $DOTFILES/nvim $HOME/.config/nvim
