@@ -82,7 +82,13 @@ Host ddd-swrm-cluster
 Host ag-ec2-instance
   HostName ec2-23-20-105-218.compute-1.amazonaws.com
   User ubuntu
-  IdentityFile ~/.ssh/ag-access-keypair.pem
+  IdentityFile ~/.ssh/keys/ag-access-keypair.pem
+  IdentitiesOnly yes
+
+Host ag-dev-ec2-instance
+  HostName ec2-13-221-38-63.compute-1.amazonaws.com
+  User ubuntu
+  IdentityFile ~/.ssh/keys/ag-access-keypair.pem
   IdentitiesOnly yes
 
 Host *
