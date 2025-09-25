@@ -16,13 +16,25 @@ Host plumledger-piccolo
   User aban
   IdentitiesOnly yes
 
-Host production-datacenter-old
+Host am-datacenter-10.43-production
+  HostName 10.151.0.43
+  IdentityFile ~/.ssh/keys/dc-10.7
+  ProxyCommand duoconnect -host=%h:%p -relay=https://gdaves.altametrics.com
+  User aban
+
+Host am-datacenter-10.44-dev
+  HostName 10.151.0.44
+  IdentityFile ~/.ssh/keys/dc-10.7
+  ProxyCommand duoconnect -host=%h:%p -relay=https://gdaves.altametrics.com
+  User aban
+
+Host am-datacenter-10.7-production-old
   HostName 10.159.10.7
   IdentityFile ~/.ssh/keys/dc-10.7
   ProxyCommand duoconnect -host=%h:%p -relay=https://gdaves.altametrics.com
   User aban
 
-Host dev-datacenter-old
+Host am-datacenter-10.8-dev-old
   HostName 10.159.10.8
   IdentityFile ~/.ssh/keys/dc-10.7
   ProxyCommand duoconnect -host=%h:%p -relay=https://gdaves.altametrics.com
