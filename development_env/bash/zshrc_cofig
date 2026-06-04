@@ -104,7 +104,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH="$PATH:/home/banalexandru/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
+# Load Angular CLI autocompletion (only if ng is installed).
+command -v ng >/dev/null 2>&1 && source <(ng completion script)
