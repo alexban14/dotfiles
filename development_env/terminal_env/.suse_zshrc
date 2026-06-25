@@ -33,3 +33,7 @@ export NVM_DIR="$HOME/.local/share/nvm"
 if [ -e /home/alex/.nix-profile/etc/profile.d/nix.sh ]; then . /home/alex/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 eval "$(direnv hook zsh)"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/alex/.local/bin:$PATH"

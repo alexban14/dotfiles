@@ -108,3 +108,4 @@ export PATH="$PATH:$HOME/.local/bin"
 
 # Load Angular CLI autocompletion (only if ng is installed).
 command -v ng >/dev/null 2>&1 && source <(ng completion script)
+export PATH=/opt/cuda/bin:$PATH
