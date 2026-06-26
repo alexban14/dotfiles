@@ -2,10 +2,16 @@
 
 ## Prerequisites
 
-- Neovim >= 0.8.0 (recommended: 0.9.0 or later)
+- Neovim >= 0.11 (required for the `vim.lsp.config`/`vim.lsp.enable` API; 0.12+ recommended)
 - Git
+- A C compiler (for nvim-treesitter parsers) and `tree-sitter` CLI
+- Node.js + npm (for several LSP servers) and `ripgrep` (Telescope grep)
 - A terminal emulator with true color support
 - Nerd Font (for icons)
+
+> Plugins are managed by [lazy.nvim](https://github.com/folke/lazy.nvim), which
+> bootstraps itself on first launch. Exact plugin versions are pinned in
+> `lazy-lock.json`.
 
 ## Installation
 
@@ -77,46 +83,41 @@ brew install php composer
 
 ### 5. Link Configuration
 
+Symlink the whole config directory:
+
 ```bash
-mkdir -p ~/.config/nvim
-ln -s /path/to/development_env/terminal_env/nvim/init.lua ~/.config/nvim/init.lua
-ln -s /path/to/development_env/terminal_env/nvim/lua ~/.config/nvim/lua
+ln -s /path/to/development_env/terminal_env/nvim ~/.config/nvim
 ```
 
-### 6. Install Plugin Manager and Plugins
+### 6. Install Plugins
 
 1. Open Neovim:
 ```bash
 nvim
 ```
 
-2. The first time you open Neovim, packer.nvim will be automatically installed.
+2. On first launch, lazy.nvim bootstraps itself and installs every plugin
+   automatically. Treesitter parsers build via `:TSUpdate` during this step.
 
-3. Run the plugin installation command:
-```bash
-:PackerSync
-```
+3. Useful commands:
+   - `:Lazy` — open the plugin manager UI
+   - `:Lazy sync` — install/clean/update to match the spec + lockfile
+   - `:Lazy restore` — install the exact versions pinned in `lazy-lock.json`
 
-4. Restart Neovim
+4. Restart Neovim.
 
 ### 7. Install Mason LSP Servers
 
-The configuration uses Mason to automatically install LSP servers. Some manual setup may be needed:
+The configuration enables these servers (install them via `:Mason` if missing):
 
-1. Open Neovim
-2. Run:
-```bash
-:Mason
-```
-
-3. Ensure these servers are installed:
    - intelephense (PHP)
-   - volar (Vue/TS)
-   - tailwindcss
-   - jsonls
-   - lua-language-server
-   - eslintd
-   - prettierd
+   - vue-language-server (`vue_ls`) + typescript-language-server (`ts_ls`) — Vue
+     uses Volar 2.x hybrid mode, where `ts_ls` loads the `@vue/typescript-plugin`
+     shipped inside the vue-language-server package
+   - tailwindcss-language-server (`tailwindcss`)
+   - json-lsp (`jsonls`)
+   - lua-language-server (`lua_ls`)
+   - eslint_d + prettierd (used by none-ls for diagnostics/formatting)
 
 ### 8. Install Language Tools
 
@@ -153,10 +154,10 @@ export TERM=xterm-256color
 ```
 
 ### LSP not working
-Run `:LspInfo` to check LSP status.
+Run `:checkhealth vim.lsp` (or `:LspInfo`) to check LSP status.
 
 ### Plugins not loading
-Run `:PackerStatus` to check plugin status.
+Run `:Lazy` to check plugin status, or `:Lazy sync` to repair.
 
 ### Icons not displaying
 Install a Nerd Font and set it in your terminal.
