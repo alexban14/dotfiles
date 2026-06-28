@@ -1,3 +1,9 @@
+Host Alex-LINUX
+  Hostname 100.66.209.100
+  IdentityFile ~/.ssh/keys/Alex-LINUX-openSUSE
+  User alex
+  IdentitiesOnly yes
+
 Host plumledger-goku
   HostName 193.29.62.232
   IdentityFile ~/.ssh/keys/goku
@@ -16,32 +22,34 @@ Host plumledger-piccolo
   User aban
   IdentitiesOnly yes
 
-Host am-datacenter-10.43-production
-  HostName 10.151.0.43
-  IdentityFile ~/.ssh/keys/dc-10.7
-  ProxyCommand duoconnect -host=%h:%p -relay=https://gdaves.altametrics.com
+Host vegeta-pcm
+  HostName 31.220.30.28
+  IdentityFile ~/.ssh/keys/vegeta-aban
   User aban
+  IdentitiesOnly yes
 
-Host am-datacenter-10.44-dev
-  HostName 10.151.0.44
-  IdentityFile ~/.ssh/keys/dc-10.7
-  ProxyCommand duoconnect -host=%h:%p -relay=https://gdaves.altametrics.com
-  User aban
-
-Host am-datacenter-10.7-production-old
+Host production-datacenter-old
   HostName 10.159.10.7
   IdentityFile ~/.ssh/keys/dc-10.7
   ProxyCommand duoconnect -host=%h:%p -relay=https://gdaves.altametrics.com
   User aban
 
-Host am-datacenter-10.8-dev-old
+Host dev-datacenter-old
   HostName 10.159.10.8
   IdentityFile ~/.ssh/keys/dc-10.7
   ProxyCommand duoconnect -host=%h:%p -relay=https://gdaves.altametrics.com
   User aban
 
+Host gitea.banalexandru.online
+  IdentityFile ~/.ssh/keys/gitea.banalexandru.online
+  IdentitiesOnly yes
+
 Host github.com
   IdentityFile ~/.ssh/keys/github.key
+  IdentitiesOnly yes
+
+Host gitlab.com
+  IdentityFile ~/.ssh/keys/gitlab-alexban
   IdentitiesOnly yes
 
 Host bitbucket.org
@@ -101,6 +109,110 @@ Host ag-dev-ec2-instance
   HostName ec2-13-221-38-63.compute-1.amazonaws.com
   User ubuntu
   IdentityFile ~/.ssh/keys/ag-access-keypair.pem
+  IdentitiesOnly yes
+
+Host am-datacenter-10.43-production
+  HostName 10.151.0.43
+  IdentityFile ~/.ssh/keys/dc-10.7
+  ProxyCommand duoconnect -host=%h:%p -relay=https://gdaves.altametrics.com
+  User aban
+
+Host am-datacenter-10.44-dev
+  HostName 10.151.0.44
+  IdentityFile ~/.ssh/keys/dc-10.7
+  ProxyCommand duoconnect -host=%h:%p -relay=https://gdaves.altametrics.com
+  User aban
+
+Host am-datacenter-10.7-production-old
+  HostName 10.159.10.7
+  IdentityFile ~/.ssh/keys/dc-10.7
+  ProxyCommand duoconnect -host=%h:%p -relay=https://gdaves.altametrics.com
+  User aban
+
+Host am-datacenter-10.8-dev-old
+  HostName 10.159.10.8
+  IdentityFile ~/.ssh/keys/dc-10.7
+  ProxyCommand duoconnect -host=%h:%p -relay=https://gdaves.altametrics.com
+  User aban
+
+Host connect-migronet.migro.ro
+  HostName connect-migronet.migro.ro
+  User graffino
+  IdentityFile ~/.ssh/keys/migronet_db_cluster
+  IdentitiesOnly yes
+
+Host coturn-media-relay
+  HostName 206.81.28.27
+  User root
+  IdentityFile ~/.ssh/keys/coturn-media-relay-droplet
+
+Host proxmox-scups
+  HostName 100.83.83.68
+  User root
+  IdentityFile ~/.ssh/keys/proxmox-host
+  IdentitiesOnly yes
+
+Host gitea-ssh.banalexandru.online
+  User git
+  IdentityFile ~/.ssh/keys/gitea.banalexandru.online
+  IdentitiesOnly yes
+  ProxyCommand cloudflared access ssh --hostname %h
+
+Host gitea-ssh.migro.ro
+  User git
+  IdentityFile ~/.ssh/keys/gitea-migro.key
+  IdentitiesOnly yes
+  ProxyCommand cloudflared access ssh --hostname %h
+
+Host lxc-vpn-gateaway
+  Hostname 192.168.10.99
+  User root
+  IdentityFile ~/.ssh/keys/migro-vpn-gateaway-ct
+
+Host migronet.migro.ro
+  HostName ec2-63-178-250-205.eu-central-1.compute.amazonaws.com
+  User ubuntu
+  IdentityFile ~/.ssh/keys/ec2-migronet-migro-ro
+  IdentitiesOnly yes
+
+Host migronet-netbird-vpn
+  HostName 16.170.227.66
+  User ubuntu
+  IdentityFile ~/.ssh/keys/migronet-netbird-ec2.pem
+
+Host migronet-staging.migro.ro
+  HostName ec2-18-197-181-13.eu-central-1.compute.amazonaws.com
+  User ubuntu
+  IdentityFile ~/.ssh/keys/ec2-migronet-staging-migro-ro
+  IdentitiesOnly yes
+
+Host portal-api.migro.ro
+  HostName 63.181.11.202
+  User ec2-user
+  IdentityFile ~/.ssh/keys/migro-portal-deploy
+
+Host migro-software-vm
+  HostName 192.168.10.70
+  User migro
+  IdentityFile ~/.ssh/keys/migro-software-vm
+  IdentitiesOnly yes
+
+Host hosted-software-vm
+  HostName 192.168.10.51
+  User migro
+  IdentityFile ~/.ssh/keys/observability-ci
+  IdentitiesOnly yes
+
+Host dgx-spark-migro
+  HostName 192.168.10.71
+  User migro-admin
+  IdentityFile ~/.ssh/keys/dgx-spark-10.71
+  IdentitiesOnly yes
+
+Host services.migro.ro
+  HostName ec2-63-177-4-176.eu-central-1.compute.amazonaws.com
+  User ubuntu
+  IdentityFile ~/.ssh/keys/ec2-services-migro-ro
   IdentitiesOnly yes
 
 Host *
