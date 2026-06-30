@@ -183,6 +183,7 @@ require('lazy').setup({
   -- Treesitter
   {
     'nvim-treesitter/nvim-treesitter',
+    branch = 'master', -- pin to legacy API (config uses require('nvim-treesitter.configs'))
     build = ':TSUpdate',
     dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
     config = function()
